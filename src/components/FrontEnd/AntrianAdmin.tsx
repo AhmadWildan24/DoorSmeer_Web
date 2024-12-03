@@ -5,7 +5,6 @@ import PopupAdmin from "./PopupAdmin";
 import { Button } from "../ui/button";
 import { Switch } from "../ui/switch";
 import { Label } from "../ui/label";
-import NavBar from "./NavBar";
 
 interface Message {
   id: number;
@@ -24,8 +23,7 @@ interface statusToko {
 }
 
 const AntrianAdmin: React.FC<{ token: string }> = ({ token }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [statAntrian, setStatAntrian] = useState<statusAntrian | null>(null);
+  const [, setStatAntrian] = useState<statusAntrian | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [statusToko, setStatusToko] = useState<statusToko | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -130,6 +128,7 @@ const AntrianAdmin: React.FC<{ token: string }> = ({ token }) => {
     // Ambil pesan saat komponen dimuat
     getMessages();
     getStatus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (error) {

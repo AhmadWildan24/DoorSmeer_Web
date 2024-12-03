@@ -1,4 +1,3 @@
-import NavBar from "./NavBar";
 import AntrianUser from "./AntrianUser";
 import Layanan from "./Layanan";
 import { fetchStatusToko } from "@/fetch";

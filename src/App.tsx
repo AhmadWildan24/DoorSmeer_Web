@@ -33,7 +33,7 @@ const App: React.FC = () => {
           <Route path="/antrianAdmin" element={token ? <AntrianAdmin token={token} /> : <Navigate to="/login" />} />
           <Route path="/antrianUser" element={<AntrianUser />} />
           <Route path="/" element={token ? <AntrianAdmin token={token} /> : <Navigate to="/dashboard" />} />
-          <Route path="/login" element={!token ? <Login setToken={setToken} /> : <Navigate to="/antrianUser" />} />
+          <Route path="/login" element={!token ? <Login setToken={setToken} /> : <Navigate to="/antrianAdmin" />} />
           <Route
             path="/Popup"
             element={

@@ -34,7 +34,21 @@ const App: React.FC = () => {
           <Route path="/antrianUser" element={<AntrianUser />} />
           <Route path="/" element={token ? <AntrianAdmin token={token} /> : <Navigate to="/dashboard" />} />
           <Route path="/login" element={!token ? <Login setToken={setToken} /> : <Navigate to="/antrianUser" />} />
-          <Route path="/Popup" element={token ? <PopupAdmin token={token} /> : <Navigate to="/login" />} />
+          <Route
+            path="/Popup"
+            element={
+              token ? (
+                <PopupAdmin
+                  token={token}
+                  onFetchMessages={function (): void {
+                    throw new Error("Function not implemented.");
+                  }}
+                />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
           <Route path="/jasa" element={<Jasa />} />
           <Route path="/dashBoard" element={<DashBoard />} />
           <Route path="/navBar" element={<NavBar />} />

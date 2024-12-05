@@ -6,7 +6,7 @@ import Card3 from "../Gambar/Card Harga3.png";
 const Layanan = () => {
   return (
     <div className="justify-items-center">
-      <p className="text-xl font-bold font-Montserrat pb-10 font-[#00365F]">Kami Melayani</p>
+      <p className="text-xl font-bold poppins pb-10 font-[#00365F]">Kami Melayani</p>
       <div className="grid grid-row-1 grid-cols-3 gap-[75px]">
         <div>
           <Card className="w-[250px] h-auto">

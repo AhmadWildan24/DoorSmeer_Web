@@ -48,7 +48,7 @@ const AntrianUser: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col bg-gradient-to-r from-sky-100 via-sky-300 to-sky-500 py-5 my-20 h-[500px] w-full">
+    <div className="flex flex-col bg-gradient-to-r from-sky-100 via-sky-300 to-sky-500 py-5 my-20 h-[500px] w-3/4 rounded-[25px]">
       <div className="w-full overflow-x-auto pl-10">
         <h1 className="text-center pb-8 poppins font-[700] text-[25px]">Status Antrian</h1>
         <Table className="w-auto bg-white border-none justify-self-center rounded-[25px]">

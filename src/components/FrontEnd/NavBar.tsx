@@ -1,7 +1,9 @@
 import logo from "../Gambar/logodoorsmeer.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
+  const location = useLocation();
+  const isActive = (path: string) => location.pathname === path;
   return (
     <nav className="w-full h-full relative px-5 md:px-10 bg-[#ffffff]">
       {/* Flex Container */}
@@ -14,22 +16,15 @@ const NavBar = () => {
         <div className="flex flex-col md:flex-row items-center justify-center w-full md:w-auto gap-5 pr-44">
           <div>
             <Link to="/dashboard">
-              <div className="border bg-[#438ce0] px-5 py-2 rounded-[10px] text-white w-[100px] text-center">
+              <div className={`${isActive("/dashboard") ? "border-red-500 bg-[#0A3981] text-white" : "border-transparent"} border-2 hover:bg-[#0A3981] hover:text-white px-5 py-2 rounded-[10px]`}>
                 <p className="font-[500]">Beranda</p>
               </div>
             </Link>
           </div>
           <div>
-            <Link to="/antrianAdmin">
-              <div className="hover:bg-[#438ce0] px-5 py-2 rounded-[10px]">
-                <p className="font-[500]">Admin</p>
-              </div>
-            </Link>
-          </div>
-          <div>
-            <Link to="/jasa">
-              <div className="hover:bg-[#438ce0] px-5 py-2 rounded-[10px]">
-                <p className="font-[500]">Jasa</p>
+            <Link to="/pesanjasa">
+              <div className={`${isActive("/pesanjasa") ? "border-red-500 bg-[#0A3981] text-white" : "border-transparent"} border-2 hover:bg-[#0A3981] hover:text-white px-5 py-2 rounded-[10px]`}>
+                <p className="font-[500]">Order</p>
               </div>
             </Link>
           </div>

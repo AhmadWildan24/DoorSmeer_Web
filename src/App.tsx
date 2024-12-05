@@ -6,6 +6,7 @@ import Jasa from "./components/FrontEnd/Jasa";
 import DashBoard from "./components/FrontEnd/DashBoard";
 import NavBar from "./components/FrontEnd/NavBar";
 import Layanan from "./components/FrontEnd/Layanan";
+import PesanJasa from "./components/FrontEnd/PesanJasa";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
@@ -53,6 +54,16 @@ const App: React.FC = () => {
           <Route path="/dashBoard" element={<DashBoard />} />
           <Route path="/navBar" element={<NavBar />} />
           <Route path="/layanan" element={<Layanan />} />
+          <Route
+            path="/pesanjasa"
+            element={
+              <PesanJasa
+                onFetchMessages={function (): void {
+                  throw new Error("Function not implemented.");
+                }}
+              />
+            }
+          />
         </Routes>
       </Router>
     </div>
